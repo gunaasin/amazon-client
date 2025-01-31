@@ -84,7 +84,7 @@ document.querySelector('.app').innerHTML = `
 function getToken() {
   try {
     const storedToken = localStorage.getItem('datacart');
-    return storedToken === null ? window.location.href = "/signin" : JSON.parse(storedToken);
+    return storedToken === null ? "": JSON.parse(storedToken); ///window.location.href = "/signin" 
   } catch (error) {
     console.error("Failed to parse token from localStorage:", error);
     return null;

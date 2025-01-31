@@ -147,12 +147,12 @@ const searchBarData = document.getElementById("search-bar");
 
         searchBtn.addEventListener("click", () => {
             let keyword = searchBarData.value.trim();
-            window.location.href = `amazon?ds=${encodeURIComponent(btoa(JSON.stringify(keyword)))}`;
+            window.location.href = `amazon.html?ds=${encodeURIComponent(btoa(JSON.stringify(keyword)))}`;
             
         })
 
         document.getElementById("nav-address").addEventListener("click",()=>{
-            window.location.href="/address";
+            window.location.href="/address.html";
         })
 
 

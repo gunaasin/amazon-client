@@ -26,18 +26,16 @@ export async function loadCartFromBackend(token) {
     });
     const curerentWindow = window.location.href;
 
-    if (!response.ok && curerentWindow.match("/checkout" )) {
+    if (!response.ok && curerentWindow.match("/checkout.html" )) {
       console.error("Failed to fetch cart products. Redirecting to signin.");
 
-      window.location.href = "/signin";
-      // window.location.href = "/signin";
+      window.location.href = "/signin.html";
     
       return;
     }
 
      return  await response.json();
-    // loadedCart = loadedCart.map((item) => item);
-    // return loadedCart;
+
   } catch (error) {
     console.error("Error during fetching cart products:", error);
   }
@@ -85,8 +83,8 @@ export function addProductInCart(request) {
       });
 
       if (!response.ok) {
+        window.location.href = "/signin.html";
         return new Error(`HTTP error :( ${response.status}`)
-        window.location.href = "/signin";
       }
       // updateCartCount();
       loadNav(localInfo);
@@ -122,14 +120,14 @@ export function removeProductFromCart(id , loadedCart) {
 
       if (!endPoint.ok) {
 
-        window.location.href = "/signin";
+        window.location.href = "/signin.html";
         setDataIntoLocalStorage();
         return new Error(`HTTP error :( ${endPoint.status}`)
       }
       // updateCartCount();
       console.log(' successfully removed');
       renderPaymentSummary(loadedCart);
-      window.location.href = "/checkout"
+      window.location.href = "/checkout.html"
     } catch (error) {
       console.error("error", error);
     }
@@ -162,7 +160,7 @@ export function updateDeliveryOption(cartItemId, deliveryOptionId , loadedCart) 
       });
 
       if (!response.ok) {
-        window.location.href = "/signin";
+        window.location.href = "/signin.html";
         return new Error(`HTTP error :( ${response.status}`)
       }
       

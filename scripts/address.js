@@ -34,7 +34,7 @@ function loadAddress() {
       );
 
       if (!response.ok) {
-          window.location.href="/signin";
+          window.location.href="/signin.html";
         throw new Error(`HTTP error: ${response.status}`);
       }
 

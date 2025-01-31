@@ -75,7 +75,7 @@ async function logout(token) {
         }
 
         console.log("Logout successful:", response);
-        window.location.href = "/signin";
+        window.location.href = "/signin.html";
     } catch (error) {
         console.error("Error during logout:", error);
     }
@@ -99,12 +99,12 @@ async function getAccess(token) {
         });
 
         if (!response.ok) {
-            window.location.href = "/signin";
+            window.location.href = "/signin.html";
             return;
         }
     } catch (error) {
         console.error("Error during logout:", error);
-        window.location.href = "/signin";
+        window.location.href = "/signin.html";
     }
 
 
